@@ -1,0 +1,98 @@
+{
+  "q1": {
+    "enunciado": "Estás desarrollando una aplicación para dispositivos móviles que ayuda a los usuarios a planificar excursiones de senderismo. Quieres integrar información meteorológica en tiempo real y mapas interactivos. ¿Qué tipo de tecnología permitiría mejor esta integración?",
+    "tipo": "unica",
+    "opciones": [
+      "Protocolo HTTP",
+      "GraphQL",
+      "Interfaces de programación de aplicaciones (API)",
+      "SOAP"
+    ],
+    "correcta": "C",
+    "explicacion": "Una API es el contrato que permite que una aplicación consiga datos de otra (clima, mapas). HTTP es el protocolo de transporte, GraphQL y SOAP son formas concretas de definir APIs, pero el término que describe la interfaz completa entre aplicaciones es 'API'."
+  },
+  "q2": {
+    "enunciado": "Estás diseñando una aplicación web que permite a los usuarios acceder a sus datos financieros desde varias cuentas bancarias. ¿Qué combinación de métodos sería la más adecuada para autenticar y autorizar de forma segura a los usuarios y aplicaciones que accedan a tu API?",
+    "tipo": "multiple",
+    "opciones": [
+      "Claves API para la identificación inicial y la limitación de la tasa",
+      "Autenticación abierta (OAuth) para que los usuarios puedan acceder a sus datos sin compartir sus contraseñas",
+      "Contraseñas en texto plano almacenadas en una base de datos",
+      "Web tokens (JWT) para transmitir de forma segura la información del usuario y los permisos entre tu aplicación y la API"
+    ],
+    "correctas": ["B", "D"],
+    "explicacion": "OAuth resuelve el acceso delegado (el usuario autoriza sin ceder su contraseña) y los JWT transportan identidad y permisos de forma verificable. Una clave API identifica una aplicación, no autentica a un usuario final, y las contraseñas en texto plano son el antipatrón de seguridad por definición."
+  },
+  "q3": {
+    "enunciado": "Estás trabajando con una API que devuelve datos en formato JSON y necesitas procesarlos dentro de tu script Python. ¿Cuál de las siguientes opciones describe mejor la relación entre JSON y los diccionarios de Python?",
+    "tipo": "unica",
+    "opciones": [
+      "Los diccionarios JSON y Python son formatos de datos completamente ajenos.",
+      "Los diccionarios Python son un tipo específico de objeto JSON utilizado únicamente para el desarrollo web.",
+      "JSON es un formato legible por humanos que puede convertirse fácilmente en diccionarios de Python para su manipulación.",
+      "JSON sólo puede procesarse mediante bibliotecas especializadas de JavaScript."
+    ],
+    "correcta": "C",
+    "explicacion": "Ambos son estructuras clave-valor. json.loads() convierte el texto JSON en un dict de Python y json.dumps() hace el camino inverso. Python trae el módulo json en su biblioteca estándar."
+  },
+  "q4": {
+    "enunciado": "Estás creando una aplicación que interactúa con una API meteorológica para recuperar y mostrar datos. Necesitas obtener la temperatura actual de una ciudad concreta. ¿Cómo estructurarías tu petición a la API para conseguirlo?",
+    "tipo": "unica",
+    "opciones": [
+      "Envíe una solicitud PUT al punto final /weather con el nombre de la ciudad en el cuerpo de la solicitud.",
+      "Envíe una solicitud GET al punto final /weather/{city_name}.",
+      "Envíe una solicitud POST al punto final /weather con el nombre de la ciudad en el cuerpo de la solicitud.",
+      "Envíe una solicitud DELETE al punto final /weather/{city_name}."
+    ],
+    "correcta": "B",
+    "explicacion": "Consultar un dato es una lectura, y la lectura en HTTP se hace con GET. La ciudad viaja en la URL porque forma parte de la dirección del recurso que se pide; POST y PUT enviarían o modificarían datos."
+  },
+  "q5": {
+    "enunciado": "Estás desarrollando una aplicación Python que necesita recuperar datos de un servidor remoto utilizando una API. Quieres elegir una librería que simplifique el proceso de hacer llamadas a la API y manejar las respuestas. ¿Qué biblioteca sería la más adecuada para esta tarea?",
+    "tipo": "unica",
+    "opciones": [
+      "requests",
+      "json",
+      "socket",
+      "xml"
+    ],
+    "correcta": "A",
+    "explicacion": "requests es la biblioteca de terceros que simplifica las llamadas HTTP y el manejo de las respuestas. json y xml son formatos de intercambio de datos, no clientes HTTP; socket es un nivel demasiado bajo para esto."
+  },
+  "q6": {
+    "enunciado": "Estás creando una aplicación web que permite a los usuarios acceder a sus archivos privados almacenados en un servicio en la nube. Quieres permitir que los usuarios concedan a tu aplicación acceso a sus archivos sin compartir sus contraseñas del servicio en la nube. ¿Qué mecanismo sería el más adecuado?",
+    "tipo": "unica",
+    "opciones": [
+      "Claves API",
+      "Autenticación básica HTTP",
+      "JWT",
+      "OAuth"
+    ],
+    "correcta": "D",
+    "explicacion": "OAuth es justamente el mecanismo de acceso delegado: el usuario autoriza a la aplicación desde la página del proveedor y esta nunca ve su contraseña. Una clave API identifica una aplicación; JWT transporta tokens, pero no implementa por sí solo la autorización del usuario."
+  },
+  "q7": {
+    "enunciado": "Estás utilizando Postman para solucionar una solicitud de API que devuelve un error 401 Unauthorized. Has confirmado que tu clave de API es correcta. ¿Cuál es la causa más probable de este error?",
+    "tipo": "unica",
+    "opciones": [
+      "La URL del punto final de la API es incorrecta.",
+      "El servidor API está experimentando un error interno.",
+      "La clave API falta o es incorrecta en la solicitud de Postman.",
+      "La clave API no se está enviando en la ubicación correcta dentro de la solicitud (por ejemplo, cabeceras, parámetros)."
+    ],
+    "correcta": "D",
+    "explicacion": "Un 401 significa 'no autenticado'. Si la clave es correcta, lo más probable es que vaya en la sección equivocada de la petición: cada API la espera en un sitio concreto (cabecera, parámetro o cuerpo) y si se manda en otro lugar, el servidor no la encuentra."
+  },
+  "q8": {
+    "enunciado": "Estás escribiendo un script que interactúa con una API de redes sociales con un límite de 100 peticiones por minuto. ¿Qué técnicas son adecuadas para gestionar este límite y garantizar que el script se ejecuta sin problemas?",
+    "tipo": "multiple",
+    "opciones": [
+      "Utilice la función time.sleep() en Python para pausar su script entre peticiones.",
+      "Implemente el tratamiento de errores con bloques try-except para capturar las excepciones de límite de velocidad y reintentar las peticiones tras un retardo.",
+      "Introduzca un retardo fijo de 0,5 segundos entre cada solicitud de API.",
+      "Almacene en caché los resultados de las llamadas frecuentes a la API para evitar peticiones redundantes."
+    ],
+    "correctas": ["A", "B", "D"],
+    "explicacion": "time.sleep() evita ráfagas, el try-except con reintento absorbe el rechazo del servidor y la caché evita incluso tener que preguntar. Un retardo fijo de 0,5 s es un número mágico: no se deduce del límite real (100/min son unos 0,6 s) y no cubre picos ni errores temporales."
+  }
+}
