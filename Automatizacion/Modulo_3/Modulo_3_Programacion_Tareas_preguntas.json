@@ -1,0 +1,74 @@
+{
+  "q1": {
+    "enunciado": "Has estado trabajando muchas horas y un colega te sugiere usar tareas programadas para racionalizar tu carga de trabajo. ¿Cuáles de las siguientes son ventajas de utilizar tareas programadas para la automatización basada en el tiempo?",
+    "tipo": "multiple",
+    "opciones": [
+      "Permite ejecutar secuencias de comandos a horas o intervalos específicos",
+      "Puede realizar varias tareas simultáneamente, lo que mejora la eficacia",
+      "Reduce la necesidad de intervención manual y de trasnochar",
+      "Garantiza la ejecución sin errores de las tareas"
+    ],
+    "correctas": ["A", "C"],
+    "explicacion": "Programar una tarea es ejecutarla cuando toca sin que nadie esté delante, de ahí el ahorro de trabajo manual y de madrugones. No significa hacer varias tareas a la vez (eso requiere paralelismo o varios procesos) ni que el script no falle: por eso la guía insiste en gestionar errores y registrar con logging."
+  },
+  "q2": {
+    "enunciado": "Tu ordenador funciona con lentitud y sospechas de la acumulación de archivos innecesarios y software obsoleto. ¿Qué tareas de mantenimiento se pueden automatizar mediante tareas programadas?",
+    "tipo": "multiple",
+    "opciones": [
+      "Análisis de virus para comprobar y eliminar periódicamente el software malicioso.",
+      "Actualizaciones de hardware para sustituir componentes obsoletos como RAM y discos duros.",
+      "Actualizaciones de software para garantizar que dispones de las últimas versiones y parches de seguridad.",
+      "Limpieza de disco para eliminar archivos temporales y liberar espacio de almacenamiento."
+    ],
+    "correctas": ["A", "C", "D"],
+    "explicacion": "Las tres son tareas de software repetibles que se ejecutan bien desde el planificador. Sustituir RAM o discos es trabajo físico: una tarea programada lo que puede hacer es avisar o preparar el equipo, no cambiarlo."
+  },
+  "q3": {
+    "enunciado": "Necesitas configurar copias de seguridad automáticas para una base de datos crítica en tu servidor Linux, con un script llamado /usr/bin/db_backup.sh. Usando cron, ¿cómo programarías este script para que se ejecute a las 5:00 AM todos los domingos?",
+    "tipo": "unica",
+    "opciones": [
+      "0 5 * * 0 /usr/bin/db_backup.sh",
+      "* 5 0 0 0 /usr/bin/db_backup.sh",
+      "5 0 * * 7 /usr/bin/db_backup.sh",
+      "5 0 0 * * /usr/bin/db_backup.sh"
+    ],
+    "correcta": "A",
+    "explicacion": "El orden de los campos de cron es 'minuto hora día_del_mes mes día_de_la_semana'. Las 5:00 AM son minuto 0 y hora 5, y el domingo es el 0 (también válido el 7). Ninguna de las otras opciones coloca los valores en los campos correctos."
+  },
+  "q4": {
+    "enunciado": "Has escrito un script de Python que genera un informe diario de ventas y quieres automatizar su ejecución con el planificador de tareas. ¿Qué pasos están involucrados en configurar la tarea para ejecutar tu script Python?",
+    "tipo": "multiple",
+    "opciones": [
+      "Especificar la acción de ejecutar un programa externo, que en este caso es el intérprete de Python ejecutando tu script",
+      "Establecer un desencadenador para definir cuándo debe ejecutarse la tarea, por ejemplo, diariamente, semanalmente o en eventos específicos",
+      "Dar un nombre descriptivo a la tarea para identificarla fácilmente más adelante",
+      "Ejecutar manualmente el script cada día para asegurarse de que funciona correctamente"
+    ],
+    "correctas": ["A", "B", "C"],
+    "explicacion": "La tarea se define por su nombre, su desencadenador (cuándo) y su acción (el intérprete de Python con la ruta del script). Ejecutarlo a mano cada día no es un paso de configuración: si hay que hacerlo, es que la automatización todavía no está hecha."
+  },
+  "q5": {
+    "enunciado": "Estás trabajando en un proyecto que requiere obtener datos meteorológicos en tiempo real cada hora y has decidido utilizar el módulo schedule de Python. ¿Qué opción describe la función principal de este módulo en este caso?",
+    "tipo": "unica",
+    "opciones": [
+      "Se conecta directamente a las APIs meteorológicas y recupera los datos necesarios.",
+      "Proporciona un marco para construir algoritmos complejos de análisis meteorológico.",
+      "Genera visualizaciones e informes basados en los datos meteorológicos recopilados.",
+      "Permite definir la hora y la frecuencia exactas de obtención de los datos meteorológicos."
+    ],
+    "correcta": "D",
+    "explicacion": "schedule no habla con ninguna API: es un calendario. Tú escribes la función que obtiene el clima (con requests) y schedule solo la invoca cuando toca, por ejemplo schedule.every().hour.do(obtener_clima)."
+  },
+  "q6": {
+    "enunciado": "Eres administrador de un servidor Linux y necesitas programar un script que realice copias de seguridad nocturnas de la base de datos a las 2:00 AM. ¿Qué método de programación sería el más adecuado?",
+    "tipo": "unica",
+    "opciones": [
+      "Programador de tareas",
+      "Cron",
+      "Ejecutar manualmente el script cada noche",
+      "El módulo schedule"
+    ],
+    "correcta": "B",
+    "explicacion": "El enunciado pide un servidor Linux, y cron es el planificador nativo de Unix. El Programador de tareas es la herramienta de Windows, y el módulo schedule exige que el proceso de Python permanezca vivo, que no es lo que se busca en un servidor."
+  }
+}

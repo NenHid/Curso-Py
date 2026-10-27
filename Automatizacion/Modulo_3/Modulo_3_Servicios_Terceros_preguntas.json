@@ -1,0 +1,74 @@
+{
+  "q1": {
+    "enunciado": "Tu equipo tiene dificultades para seguir el ritmo del volumen de mensajes y notificaciones en su plataforma de chat. Quieres automatizar parte de la comunicación para mejorar la eficiencia. ¿Cuál de las siguientes soluciones podría implementarse utilizando Python y un servicio de terceros?",
+    "tipo": "unica",
+    "opciones": [
+      "Desarrolle un script que filtre los mensajes, envíe actualizaciones automáticas y resuma las conversaciones.",
+      "Contratar a un becario para que gestione y responda manualmente a todos los mensajes y notificaciones.",
+      "Cambie a otra plataforma de chat en equipo que tenga funciones de automatización integradas.",
+      "Cree un sistema de archivo físico para organizar las copias impresas de todos los mensajes."
+    ],
+    "correcta": "A",
+    "explicacion": "Es exactamente el caso de uso de la automatización: un script filtra el ruido, publica novedades y resume. Las otras opciones no usan Python ni un servicio de terceros, e ignoran el problema en vez de escalarlo."
+  },
+  "q2": {
+    "enunciado": "Su empresa experimenta cortes ocasionales del sistema que interrumpen el acceso de los empleados a los archivos de trabajo esenciales. ¿Qué solución de automatización, utilizando Python y un servicio de terceros, mitigaría mejor el impacto y garantizaría que los empleados tengan acceso a los archivos durante las interrupciones?",
+    "tipo": "unica",
+    "opciones": [
+      "Implemente copias de seguridad automatizadas de archivos críticos en un servicio de almacenamiento en la nube.",
+      "Utiliza Python para crear un servidor local que replique todos los archivos almacenados en el servidor principal de la empresa.",
+      "Automatice el proceso de envío de correos electrónicos a Asistencia de TI cuando se detecte una interrupción.",
+      "Desarrolle un chatbot que notifique a los empleados cuando se produzca una interrupción."
+    ],
+    "correcta": "A",
+    "explicacion": "La pregunta pide que los empleados sigan teniendo acceso durante la caída. Solo la copia en la nube resuelve eso: un servidor local cae con el sistema, y las otras dos opciones solo avisan del problema."
+  },
+  "q3": {
+    "enunciado": "El equipo de ventas usa hojas de cálculo para seguir a los clientes potenciales, con una gestión eficiente de los datos y alto riesgo de errores. ¿Qué solución, utilizando Python e integraciones de terceros, mejoraría el flujo de trabajo del equipo?",
+    "tipo": "unica",
+    "opciones": [
+      "Utilice Python para crear una aplicación web personalizada que reproduzca la funcionalidad de su actual sistema de hojas de cálculo.",
+      "Desarrollar un script en Python que genere automáticamente informes de ventas a partir de los datos de la hoja de cálculo.",
+      "Crear un script en Python que envíe recordatorios automáticos al equipo de ventas para que actualice la hoja de cálculo con regularidad.",
+      "Integre su sistema de administración de relaciones con clientes (CRM) con scripts de Python para automatizar la introducción de datos, la asignación de clientes potenciales y los correos electrónicos de seguimiento."
+    ],
+    "correcta": "D",
+    "explicacion": "La hoja de cálculo es el síntoma: el dato sigue entrando a mano. Integrar el CRM con scripts elimina la entrada manual, reparte los leads y dispara el seguimiento, que es el flujo completo del que habla el enunciado."
+  },
+  "q4": {
+    "enunciado": "Es responsable de gestionar una bandeja de entrada de atención al cliente con mucho volumen y necesita priorizar las consultas urgentes de clientes específicos. ¿Qué enfoque, utilizando Python y la biblioteca imaplib, sería más eficaz?",
+    "tipo": "unica",
+    "opciones": [
+      "Escriba un script que compruebe periódicamente si hay nuevos correos, identifique los que proceden de clientes específicos o contienen determinadas palabras clave y le envíe notificaciones.",
+      "Utilice Python para reenviar automáticamente todos los mensajes de clientes específicos a una bandeja de entrada independiente de alta prioridad.",
+      "Escribe un script que elimine automáticamente todos los correos electrónicos que no sean de clientes específicos.",
+      "Desarrolle un script que responda automáticamente a cada correo electrónico con un mensaje genérico de acuse de recibo."
+    ],
+    "correcta": "A",
+    "explicacion": "Es lo que hace imaplib: IMAP4_SSL abre la bandeja, select() elige el buzón y search() filtra por remitente o palabras clave. Las otras opciones destruyen o enturbian información en vez de priorizarla."
+  },
+  "q5": {
+    "enunciado": "Emily, una popular artista, quiere automatizar las interacciones con sus seguidores en Instagram para aumentar la participación y construir una comunidad más fuerte. ¿Qué acciones podría automatizar utilizando Python y la biblioteca Instabot?",
+    "tipo": "multiple",
+    "opciones": [
+      "Seguir cuentas que interactúen frecuentemente con su contenido.",
+      "Me gusta de los POST de sus seguidores.",
+      "Enviar respuestas personalizadas a los comentarios de sus POST.",
+      "Crear automáticamente nuevas obras de arte y publicarlas en su feed."
+    ],
+    "correctas": ["A", "B", "C"],
+    "explicacion": "Las tres primeras son interacciones dentro de Instagram y son justo lo que automatiza Instabot. Crear obras de arte automáticamente no es una tarea de una librería de publicación: la autoría es humana y automatizarla es una decisión de negocio, no una capacidad técnica."
+  },
+  "q6": {
+    "enunciado": "Su equipo desarrolla una aplicación web que se integra con una pasarela de pago de terceros para procesar transacciones en línea. ¿Qué medidas de seguridad deben priorizarse para proteger los datos confidenciales de los clientes durante esta integración?",
+    "tipo": "multiple",
+    "opciones": [
+      "Audite y actualice periódicamente la integración en busca de vulnerabilidades de seguridad.",
+      "Implantar mecanismos sólidos de autenticación y autorización.",
+      "Almacene las claves y contraseñas de la API directamente en el código fuente de la aplicación.",
+      "Cifrado de datos en tránsito y en reposo."
+    ],
+    "correctas": ["A", "B", "D"],
+    "explicacion": "Auditar, autenticar bien y cifrar son las tres medidas que hay que priorizar. Guardar las claves en el código fuente es justamente el error clásico: el repositorio acaba publicando los secretos y hay que rotarlas."
+  }
+}
